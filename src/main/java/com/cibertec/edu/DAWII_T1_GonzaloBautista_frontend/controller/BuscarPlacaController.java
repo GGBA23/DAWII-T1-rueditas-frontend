@@ -31,7 +31,7 @@ public class BuscarPlacaController {
 
         // Validar campos de entrada
         if (codigoPlaca == null || codigoPlaca.trim().length() == 0 ||
-                codigoPlaca.trim().length() > 7 || codigoPlaca.trim().length() < 7){
+                codigoPlaca.trim().length() > 7 || codigoPlaca.trim().length() < 7 || !codigoPlaca.matches("^[a-zA-Z0-9-]+$")){
 
             BuscarPlacaModel buscarPlacaModel = new BuscarPlacaModel("01","Error: Debe ingresar una placa correcta","", "","", "", "");
             model.addAttribute("buscarPlacaModel",buscarPlacaModel);
